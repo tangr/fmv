@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+#include <errno.h> 
 
 #define FILENAME_SIZE 1024
 
@@ -33,6 +35,17 @@ main(int argc, char *argv[])
     if (debug == 1) {
         printf("live=%s, old=%s, new=%s\n", live, old, new);
     }
+
+    if (rename(live, old) == -1) {
+        printf("Failed: %s\n", strerror(errno));
+        return 1;
+    }
+
+    if (rename(new, live) == -1) {
+        printf("Failed: %s\n", strerror(errno));
+        return 1;
+    }
+
     return 0;
 }
 
