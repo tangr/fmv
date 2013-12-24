@@ -1,8 +1,8 @@
 all:
-	cc -o dmv dmv.c
+	cc -o fmv fmv.c
 
 test:all
-	strace -tt -T ./dmv a b c
+	strace -tt -T ./fmv a b c
 
 clean:
-	rm -f dmv
+	rm -f fmv
