@@ -27,7 +27,7 @@ main(int argc, char *argv[])
                 snprintf(new, FILENAME_SIZE, "%s", optarg);
                 break;
             case 'h':
-                printf("Usage: dmv -l live_dir -o old_dir -n new_dir\n");
+                printf("Usage: fmv -l live_dir -o old_dir -n new_dir\n");
                 return 0;
         }
     }
